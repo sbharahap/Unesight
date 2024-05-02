@@ -19,6 +19,7 @@ struct ImagePicker: View {
         NavigationView {
             VStack {
                 Spacer()
+                Spacer()
                 if let image = image {
                     image
                         .resizable()
