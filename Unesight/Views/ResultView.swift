@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ImagePicker: View {
+struct ResultView: View {
     @State private var isShown: Bool = false
     @State private var image: Image?
     @State private var classifiedResult: String = ""
@@ -60,9 +60,9 @@ struct ImagePicker: View {
     }
 }
 
-struct ImagePicker_Previews: PreviewProvider {
+struct ResultView_Previews: PreviewProvider {
     static var previews: some View {
-        ImagePicker()
+        ResultView()
     }
 }
 

@@ -12,7 +12,7 @@ import SwiftUI
 
 struct HistoryView: View {
     @Binding var results: [Int]
-    @State private var showImagePicker = false // Tambahkan property
+    @State private var showResultView = false // Tambahkan property
     
     var total: Int {
         return results.reduce(0, +)
@@ -43,7 +43,7 @@ struct HistoryView: View {
                     .accessibility(label: Text("Total uang: \(total)"))
                 
                 Button(action: {
-                    self.showImagePicker = true // Ubah state untuk menampilkan ImagePicker
+                    self.showResultView = true
                 }) {
                     Text("Deteksi Uang Lagi")
                         .padding()
@@ -55,7 +55,7 @@ struct HistoryView: View {
                 Spacer()
                 Button(action: {
                     self.results = [] // Menghapus riwayat deteksi
-                    self.showImagePicker = true // Ubah state untuk menampilkan ImagePicker
+                    self.showResultView = true
                 }) {
                     Text("Reset                     ")
                         .padding()
@@ -67,8 +67,8 @@ struct HistoryView: View {
                 Spacer()
             }
             .navigationBarTitle("Riwayat Deteksi Uang")
-            .sheet(isPresented: $showImagePicker) { // Gunakan showImagePicker di sini
-                ImagePickerCoordinator(isShown: self.$showImagePicker, image: .constant(nil), result: .constant(""), results: self.$results)
+            .sheet(isPresented: $showResultView) {
+                ImagePickerCoordinator(isShown: self.$showResultView, image: .constant(nil), result: .constant(""), results: self.$results)
             }
         }
     }

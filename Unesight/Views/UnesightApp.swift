@@ -11,7 +11,7 @@ import SwiftUI
 struct UnesightApp: App {
     var body: some Scene {
         WindowGroup {
-            ImagePicker()
+            ResultView()
                 .environment(\.locale, .init(identifier: "id")) // Set locale ke Bahasa Indonesia
         }
     }
