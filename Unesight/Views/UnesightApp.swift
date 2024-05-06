@@ -12,6 +12,7 @@ struct UnesightApp: App {
     var body: some Scene {
         WindowGroup {
             ImagePicker()
+                .environment(\.locale, .init(identifier: "id")) // Set locale ke Bahasa Indonesia
         }
     }
 }
